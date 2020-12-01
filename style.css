@@ -1,0 +1,168 @@
+.section {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 4em;
+}
+
+.firstPage {
+    background-image: url("firstPageBg.jpg");
+}
+
+#caption {
+    font-size: 1.5em;
+}
+
+#aye {
+    width: 13%;
+    position: absolute;
+    top: 65%;
+    left: 43%;
+    cursor: pointer;
+}
+
+#coconut1 {
+    width: 4%;
+    position: absolute;
+    top: 71.2%;
+    left: 47.4%;
+}
+
+#coconut2 {
+    width: 4%;
+    position: absolute;
+    top: 70.5%;
+    left: 48.9%;
+}
+
+#coconut3 {
+    width: 4%;
+    position: absolute;
+    top: 72.9%;
+    left: 48.2%;
+}
+
+#recruit {
+    width: 10%;
+    height: 7%;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(0.8, 0.8);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1, 1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0.8, 0.8);
+        opacity: 1;
+    }
+}
+
+@keyframes coconutfall {
+    0% {
+        top: 71.2%;
+    }
+    25% {
+        top: 76.5%;
+    }
+    100% {
+        top: 83.4%;
+    }
+}
+
+@keyframes coconutfall1 {
+    0% {
+        top: 70.5%;
+    }
+    30% {
+        top: 80.4%;
+    }
+    100% {
+        top: 83.6%;
+    }
+}
+
+@keyframes coconutfall2 {
+    0% {
+        top: 72.9%;
+    }
+    35% {
+        top: 76.8%;
+    }
+    100% {
+        top: 84.5%;
+    }
+}
+
+#menu li {
+    display:inline-block;
+    margin: 10px;
+    color: #000;
+    background:#fff;
+    background: rgba(255,255,255, 0.5);
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+}
+#menu li.active{
+    background:#666;
+    background: rgba(0,0,0, 0.5);
+    color: #fff;
+}
+#menu li a{
+    text-decoration:none;
+    color: #000;
+}
+#menu li.active a:hover{
+    color: #000;
+}
+#menu li:hover{
+    background: rgba(255,255,255, 0.8);
+}
+#menu li a,
+#menu li.active a{
+    padding: 9px 18px;
+    display:block;
+}
+#menu li.active a{
+    color: #fff;
+}
+#menu{
+    position:fixed;
+    top:0;
+    left:0;
+    height: 40px;
+    z-index: 70;
+    width: 100%;
+    padding: 0;
+    margin:0;
+}
+
+@media screen and (max-width: 900px) {
+    #aye {
+        display: none;
+    }
+    #coconut1 {
+        display: none;
+    }
+    #coconut2 {
+        display: none;
+    }
+    #coconut3 {
+        display: none;
+    }
+    .firstPage {
+        background-image: none;
+    }
+
+    #recruit {
+        width: 30%;
+    }
+
+    #caption {
+        font-size: 60%;
+    }
+}

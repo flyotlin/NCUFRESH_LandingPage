@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2021新生知訊網</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://rawgit.com/alvarotrigo/fullPage.js/dev/src/fullpage.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://rawgit.com/alvarotrigo/fullPage.js/dev/src/fullpage.js"></script>
+</head>
+<body>
+    <ul id="menu">
+        <li data-menuanchor="firstPage"><a href="#firstPage">新知網</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage">各組介紹</a></li>
+        <li data-menuanchor="thirdPage"><a href="#thirdPage">加入我們</a></li>
+    </ul>
+    <div id="fullpage">
+        <div class="section firstPage">
+            <div id="caption">2021新生知訊網</div>
+        </div>
+        <div class="section">
+            <div class="slide" data-anchor="slide1">
+                <div>執行組</div>
+                <h1>Busy Busy Busy</h1>
+            </div>
+            <div class="slide" data-anchor="slide1">
+                <div>企劃組</div>
+                <h1>酷的</h1>
+            </div>
+            <div class="slide" data-anchor="slide1">
+                <div>影音組</div>
+                <h1>酷的 嘎嗚嘎嗚</h1>
+            </div>
+            <div class="slide" data-anchor="slide1">
+                <div>美工組</div>
+                <h1>ㄨㄚˊ 咘</h1>
+            </div>
+            <div class="slide" data-anchor="slide1">
+                <div>程設組</div>
+                <h1>椰~喵</h1>
+            </div>
+        </div>
+        <div class="section">
+            <h1>好心動椰~新知網說明會12/7</h1>
+            <div id="countdown">倒數</div>
+            <button id="recruit" type="button" class="btn btn-secondary" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdfoJGWDWIpRDHwO6rK5C-ZaCahlub1mKBUUZ5T_gEn2zNxUw/viewform'">加入我們!</button>
+            <img id="aye" src="aye.png" alt="">
+            <img id="coconut1" src="coconut1.png" alt="">
+            <img id="coconut2" src="coconut1.png" alt="">
+            <img id="coconut3" src="coconut1.png" alt="">
+        </div>
+    </div>
+    <script>
+        new fullpage('#fullpage', {
+            licenseKey: 'YOUR KEY HERE',
+            anchors:['firstPage', 'secondPage', 'thirdPage'],
+            sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6'],
+            navigation: true,
+            menu: '#menu',
+            easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.275)',
+        });
+
+        $("#recruit").hover(function() {
+            $("#recruit").css("animation", "none");
+        }, function() {
+            $("#recruit").css("animation", "heartbeat 1.5s infinite");
+        })
+
+        $("#aye").click(function() {
+            $("#coconut1").css("animation", "coconutfall 1s");
+            $("#coconut2").css("animation", "coconutfall1 1s");
+            $("#coconut3").css("animation", "coconutfall2 1s");
+            setTimeout(function() {
+                // coconut1
+                $("#coconut1").css("animation", "none")
+                $("#coconut1").css("top", "71.2%");
+                // coconut2
+                $("#coconut2").css("animation", "none")
+                $("#coconut2").css("top", "70.5%");
+                // coconut3
+                $("#coconut3").css("animation", "none")
+                $("#coconut3").css("top", "72.9%");
+                location.hash = "#firstPage";
+            }, 1000);
+        })
+
+        window.setInterval(function() {
+            let dateNow = new Date();
+            let month = dateNow.getMonth();
+            let date = dateNow.getDate();
+            let remain = (12 - month - 1) * 30 + 7 - date;
+            if (remain < 0)
+                $("#countdown").text("說明會已經過了QQ");
+            else
+                $("#countdown").text("倒數" + remain + "天");
+        }, 500);
+
+    </script>
+</body>
+</html>
